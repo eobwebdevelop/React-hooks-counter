@@ -42,11 +42,12 @@ function Counter() {
   // Declares a new state variable, which we will call "count"
   // Declares a setCount function that allows you to modify the count value
   const[count, setCount] = useState(0);
-  const[startValue] = useState(0);
+
 
   return (
     <div>
-    <p> This is the start value of the counter: {startValue}</p>
+    <span>This is the start value: </span>
+    <input id="startValue" type="text" value={count} onChange={evt => setCount(evt.target.value)}></input>
       <p>The counter is at : {count} </p>
       <button onClick={() => setCount(count + 1)}>>
         +1
